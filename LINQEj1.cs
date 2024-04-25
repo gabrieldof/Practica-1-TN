@@ -18,15 +18,19 @@ namespace Practica_1_TN
             enteros.Add(92);
             enteros.Add(153);
             enteros.Add(15);
+
             //Query Expressions
             var resultado = from ent in enteros
                                 where ent > 30 && ent < 100
                                 orderby ent descending
                                 select ent;
             //Methods
-            var resultado2 = enteros.Where(x => x > 30 ).ToList().OrderDescending();
+            var resultado2 = enteros.Where(num => num > 30 && num < 100).ToList().OrderDescending();
 
-            foreach(var ent in resultado)
+
+            Console.WriteLine("Números mayores que 30 y menores que 100:");
+
+            foreach (var ent in resultado)
             {
                 Console.WriteLine(ent);
             }
